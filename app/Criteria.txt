@@ -1,0 +1,24 @@
+Wat moet je kennen?
+- Je past de concepten van het Android framework toe, zodanig dat je een Androidapplicatie kunt ontwikkelen die voldoet aan vooraf gestelde eisen
+- Je kunt de betekenis van RESTful webservices uitleggen en kunt deze toepassen
+- Je kunt de code en concepten voldoende uitleggen en toelichten.
+
+Verplicht:
+- De app maakt het mogelijk om de functionaliteit op een gebruiksvriendelijke manier te gebruiken
+- De app biedt een scherm met een lijst items. De inhoud van het scherm kan scrollen. Je gebruikt hiervoor een RecyclerView
+    - Maak een class voor items, met bijbehorende filter opties. In de recycler view kun je een lijst aanroepen van deze items
+- Vanuit de lijst van items kan je doorklikken naar een scherm met de details van dat geselecteerde item
+- De app biedt aparte schermontwerpen voor horizontale en verticale schermen
+- De app maakt gebruik van asynchrone threads waar nodig
+- Je maakt gebruik van logging op meerdere niveaus
+- De app toont, wanneer een nieuwe items worden ingelezen, een toast met het aantal ingelezen items
+    - Toast is de kleine popup aan de onderkant van het scherm
+
+(optioneel, bonus punten)
+- De app heeft een menu waarin je kunt filteren op bijvoorbeeld plaats, vega/vegan en/of ingredienten. De app toont dan de gevonden maaltijden
+- Je slaat de geselecteerde filteropties op in shared preferences
+- De app biedt meertaligheid in de GUI-elementen
+- De lijst met maaltijden wordt opgeslagen met behulp van Room. Als het device geen internetverbinding heeft, wordt deze lijst getoond.
+- De app gebruikt SavedistanceState om de state van de app te bewaren bij het roteren van het device zodat de gegevens niet opnieuw worden opgehaald van het internet.
+
+https://app.mural.co/t/androidapp0171/m/androidapp0171/1645092636850/718dfe0585a1c52f8ec36d0c35ec3c4dbd68a600?sender=u1da1a987e941c25809ea5085
