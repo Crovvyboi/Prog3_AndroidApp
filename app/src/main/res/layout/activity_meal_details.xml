@@ -50,7 +50,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/MealImage"
             android:layout_width="194dp"
             android:layout_height="186dp"
             android:layout_alignParentTop="true"
@@ -61,40 +61,41 @@
             app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/ChefImage"
             android:layout_width="85dp"
             android:layout_height="86dp"
             android:layout_marginStart="60dp"
             android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/imageView3"
+            android:layout_toEndOf="@+id/MealImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/MealImage"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ListView
+            android:id="@+id/PropertiesList"
             android:layout_width="147dp"
             android:layout_height="255dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.578"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/MealImage"
             tools:layout_editor_absoluteY="178dp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/TitleText"
             android:layout_width="202dp"
             android:layout_height="43dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
-            android:text="Head"
+            android:text="Title"
             app:layout_constraintEnd_toStartOf="@+id/_dynamic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/MealImage" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/PriceText"
             android:layout_width="202dp"
             android:layout_height="20dp"
             android:layout_marginStart="16dp"
@@ -103,10 +104,10 @@
             android:text="Price"
             app:layout_constraintEnd_toStartOf="@+id/_dynamic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/TitleText" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/DescriptionText"
             android:layout_width="198dp"
             android:layout_height="193dp"
             android:layout_marginStart="16dp"
@@ -115,27 +116,27 @@
             android:text="Description"
             app:layout_constraintEnd_toStartOf="@+id/_dynamic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/PriceText" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/ServedText"
             android:layout_width="360dp"
             android:layout_height="24dp"
             android:layout_marginTop="12dp"
             android:text="Served On"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/DescriptionText" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/AllergiesText"
             android:layout_width="360dp"
             android:layout_height="52dp"
             android:layout_marginTop="20dp"
             android:text="Allegies"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/ServedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
