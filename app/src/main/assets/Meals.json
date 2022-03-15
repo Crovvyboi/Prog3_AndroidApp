@@ -1,0 +1,23 @@
+{"mealList":
+  [
+    {
+      "name": "Meal 1",
+      "description": "This meal is a meal",
+      "imageURL": "",
+      "dateTime": "2015-06-11",
+      "price": 0.00,
+      "ingrediënts": [
+        {
+          "name": "",
+          "imageURL": "",
+          "allergenic": false
+        }
+      ],
+      "vegetarian": false,
+      "vegan": false,
+      "takeAway": false,
+      "active": false,
+      "maxParticipants": 1
+    }
+  ]
+}
