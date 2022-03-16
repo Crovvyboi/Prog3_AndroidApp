@@ -125,6 +125,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="24dp"
             android:layout_toEndOf="@+id/MealImage"
+            app:layout_constraintBottom_toTopOf="@+id/PropertyList"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.414"
             app:layout_constraintStart_toEndOf="@+id/MealImage"
@@ -137,10 +138,11 @@
             android:layout_height="255dp"
             android:inputType="textMultiLine"
             android:lines="4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/DescriptionText"
-            tools:layout_editor_absoluteY="222dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

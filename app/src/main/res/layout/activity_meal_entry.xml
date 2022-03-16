@@ -44,21 +44,23 @@
         android:id="@+id/nameText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleText"
-        tools:layout_editor_absoluteY="80dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
     <EditText
         android:id="@+id/descriptionText"
-        android:layout_width="781dp"
-        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:gravity="top|start"
@@ -70,14 +72,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
     <EditText
         android:id="@+id/imageUrl"
-        android:layout_width="785dp"
-        android:layout_height="36dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -91,10 +93,10 @@
         android:id="@+id/vegebox"
         android:layout_width="170dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="36dp"
         android:text="Vegetarian"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
 
@@ -102,35 +104,34 @@
         android:id="@+id/veganBox"
         android:layout_width="170dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
         android:text="Vegan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
+        app:layout_constraintTop_toBottomOf="@+id/vegebox" />
 
     <Switch
         android:id="@+id/switchTakeAway"
-        android:layout_width="330dp"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:text="TakeAway"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageUrl"
+        app:layout_constraintTop_toBottomOf="@+id/veganBox"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switchAvailable"
-        android:layout_width="329dp"
-        android:layout_height="21dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="32dp"
         android:text="Available"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchTakeAway"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -149,9 +150,12 @@
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="Add a new meal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="89dp" />
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        app:layout_constraintVertical_bias="0.478" />
 
     <TextView
         android:id="@+id/textView2"
@@ -162,21 +166,21 @@
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchAvailable"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <EditText
         android:id="@+id/priceText"
-        android:layout_width="215dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
         android:singleLine="true"
-        android:text="0.00"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/switchAvailable"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.148" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

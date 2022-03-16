@@ -122,23 +122,21 @@
             android:id="@+id/ChefImage"
             android:layout_width="85dp"
             android:layout_height="86dp"
-            android:layout_marginStart="60dp"
             android:layout_marginTop="24dp"
             android:layout_toEndOf="@+id/MealImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.968"
-            app:layout_constraintStart_toEndOf="@+id/MealImage"
+            app:layout_constraintStart_toEndOf="@+id/PropertyList"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/PropertyList"
-            android:layout_width="147dp"
-            android:layout_height="255dp"
+            android:layout_width="111dp"
+            android:layout_height="256dp"
             android:inputType="textMultiLine"
             android:lines="4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintHorizontal_bias="0.688"
             app:layout_constraintStart_toEndOf="@+id/DescriptionText"
             tools:layout_editor_absoluteY="16dp" />
 

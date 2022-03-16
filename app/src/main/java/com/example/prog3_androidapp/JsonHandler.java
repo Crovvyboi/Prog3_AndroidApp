@@ -105,7 +105,6 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
                     String description = object.getString("description");
                     String imageURL = object.getString("imageUrl");
                     String chefURL = "https://thumbs.dreamstime.com/z/portrait-busy-chef-smiling-holding-cooking-utensil-fresh-ingredient-30014151.jpg";
-                    // find format
                     String date = object.getString("dateTime");
 
                     double price = object.getDouble("price");
