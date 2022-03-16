@@ -17,13 +17,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.ref.WeakReference;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -47,8 +52,9 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
 
         for (String string: strings) {
             // Get json string from file
+
             try{
-                InputStream is = context.get().getAssets().open(string);
+                InputStream is = new URL("https://shareameal-api.herokuapp.com/api/meal").openStream();
                 int size = is.available();
                 byte[] buffer = new byte[size];
                 is.read(buffer);
@@ -59,21 +65,36 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
                 return null;
             }
 
-            // Copy and insert data in local json file
-            File directory = new File(context.get().getFilesDir(), "Meals.json");
             try {
-                FileWriter fw = new FileWriter(directory);
-                fw.write(jsonString);
-                fw.close();
-            } catch (IOException e) {
+                InputStream is = new URL("https://shareameal-api.herokuapp.com/api/meal").openStream();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+                StringBuilder sb = new StringBuilder();
+                int cp;
+                while ((cp = rd.read()) != -1) {
+                    sb.append((char) cp);
+                }
+                jsonString = sb.toString();
+            } catch (MalformedURLException e) {
                 e.printStackTrace();
-                Log.e(LOG_TAG, "Could not write file");
+            }  catch (IOException e) {
+                e.printStackTrace();
             }
+
+            // Copy and insert data in local json file
+//            File directory = new File(context.get().getFilesDir(), "Meals.json");
+//            try {
+//                FileWriter fw = new FileWriter(directory);
+//                fw.write(jsonString);
+//                fw.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                Log.e(LOG_TAG, "Could not write file");
+//            }
 
             // Get meals from Json
             try {
                 JSONObject reader = new JSONObject(jsonString);
-                JSONArray array = reader.getJSONArray("mealList");
+                JSONArray array = reader.getJSONArray("result");
 
                 for (int i = 0; i < array.length(); i++)
                 {
@@ -82,33 +103,21 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
                     // initialize meal at index
                     String name = object.getString("name");
                     String description = object.getString("description");
-                    String imageURL = object.getString("imageURL");
-                    String chefURL = object.getString("chefURL");
+                    String imageURL = object.getString("imageUrl");
+                    String chefURL = "https://thumbs.dreamstime.com/z/portrait-busy-chef-smiling-holding-cooking-utensil-fresh-ingredient-30014151.jpg";
                     // find format
                     String date = object.getString("dateTime");
 
                     double price = object.getDouble("price");
 
-                    boolean vegetarian = object.getBoolean("vegetarian");
-                    boolean vegan = object.getBoolean("vegan");
-                    boolean takeAway = object.getBoolean("takeAway");
-                    boolean active = object.getBoolean("active");
+                    boolean vegetarian = object.getBoolean("isVega");
+                    boolean vegan = object.getBoolean("isVegan");
+                    boolean takeAway = object.getBoolean("isToTakeHome");
+                    boolean active = object.getBoolean("isActive");
 
-                    int maxParticipants = object.getInt("maxParticipants");
+                    int maxParticipants = object.getInt("maxAmountOfParticipants");
 
-                    JSONArray ingredientArray = object.getJSONArray("ingrediënts");
                     ArrayList<Ingrediënt> ingrediënts = new ArrayList<>();
-                    for (int k = 0; k < ingredientArray.length(); k++){
-                        // Get and assign ingredients
-                        JSONObject ingredientObj = ingredientArray.getJSONObject(k);
-
-                        String ingName = ingredientObj.getString("name");
-                        String ingImg = ingredientObj.getString("imageURL");
-                        boolean ingAll = ingredientObj.getBoolean("allergenic");
-
-                        Ingrediënt newIngredient = new Ingrediënt(ingName, ingImg, ingAll);
-
-                    }
 
                     Meal newMeal = new Meal(name, description, imageURL, chefURL, date, price, ingrediënts, vegetarian, vegan, takeAway, active, maxParticipants);
                     mList.add(newMeal);

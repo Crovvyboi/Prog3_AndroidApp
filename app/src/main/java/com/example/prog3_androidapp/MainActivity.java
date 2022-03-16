@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+
         // if user starts app for first time, update internal storage file, otherwise read from internal file
         if (intent.getSerializableExtra("state") == null){
             // Retrieve list of meals from Json file and put them in recyclerview

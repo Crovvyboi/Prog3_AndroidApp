@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programmes/School/Prog3_AndroidApp/Prog3_AndroidApp/app/src/main/res/layout-land/activity_main.xml" value="0.31040564373897706" />
+        <entry key="..\:/Programmes/School/Prog3_AndroidApp/Prog3_AndroidApp/app/src/main/res/layout-land/activity_meal_details.xml" value="0.31040564373897706" />
+        <entry key="..\:/Programmes/School/Prog3_AndroidApp/Prog3_AndroidApp/app/src/main/res/layout-land/activity_meal_entry.xml" value="0.31040564373897706" />
         <entry key="..\:/Programmes/School/Prog3_AndroidApp/Prog3_AndroidApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Programmes/School/Prog3_AndroidApp/Prog3_AndroidApp/app/src/main/res/layout/activity_meal_details.xml" value="0.33" />
         <entry key="..\:/Programmes/School/Prog3_AndroidApp/Prog3_AndroidApp/app/src/main/res/layout/activity_meal_entry.xml" value="0.28615384615384615" />
