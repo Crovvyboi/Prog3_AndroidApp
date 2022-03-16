@@ -10,7 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 @SuppressLint("RestrictedApi")
 public class MealDetails extends AppCompatActivity {
@@ -35,8 +39,10 @@ public class MealDetails extends AppCompatActivity {
 
         View chefImage = this.findViewById(R.id.ChefImage);
 
-        // List propertiesList = this.findViewById(R.id.PropertiesList);
 
+
+        TextView propertiesList = this.findViewById(R.id.PropertyList);
+        propertiesList.setText(meal.GetProperties());
 
         TextView titleText = this.findViewById(R.id.TitleText);
         titleText.setText(meal.GetName());
@@ -49,5 +55,8 @@ public class MealDetails extends AppCompatActivity {
 
         TextView servedText = this.findViewById(R.id.ServedText);
         servedText.setText(meal.GetServed());
+
+        TextView allergText = this.findViewById(R.id.AllergiesText);
+        allergText.setText(meal.GetAllergies());
     }
 }

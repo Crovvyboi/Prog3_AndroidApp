@@ -41,11 +41,11 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/nameText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -56,77 +56,85 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/DescriptionText"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+
         android:text="Description"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/imageUrl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Image URl"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionText" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/vegebox"
         android:layout_width="170dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"
-        android:text="CheckBox"
+        android:text="Vegetarian"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/veganBox"
         android:layout_width="170dp"
         android:layout_height="48dp"
-        android:text="CheckBox"
+        android:text="Vegan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/vegebox" />
 
-    <RadioButton
-        android:id="@+id/radioButton2"
+    <Switch
+        android:id="@+id/switchTakeAway"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:text="RadioButton"
+        android:text="TakeAway"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/veganBox"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    <RadioButton
-        android:id="@+id/radioButton3"
+    <Switch
+        android:id="@+id/switchAvailable"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="32dp"
-        android:text="RadioButton"
+        android:text="Available"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/switchTakeAway"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
         android:id="@+id/button2"
@@ -136,5 +144,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Add a new meal"
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        app:layout_constraintVertical_bias="0.478" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

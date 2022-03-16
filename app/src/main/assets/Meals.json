@@ -13,10 +13,10 @@
           "allergenic": false
         }
       ],
-      "vegetarian": false,
+      "vegetarian": true,
       "vegan": false,
       "takeAway": false,
-      "active": false,
+      "active": true,
       "maxParticipants": 1
     }
   ]

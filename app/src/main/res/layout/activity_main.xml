@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="@id/recyclerView">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
+            android:id="@+id/dropdown_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -26,10 +26,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
             app:srcCompat="@android:drawable/ic_menu_sort_by_size"
-            android:contentDescription="Menubutton" />
+            android:contentDescription="Menubutton"
+        />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -42,7 +43,7 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/addNewFAB"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -54,7 +55,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:contentDescription="FAB" />
+        android:contentDescription="FAB"
+        android:onClick="AddNew"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -63,7 +65,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintBottom_toTopOf="@+id/addNewFAB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
