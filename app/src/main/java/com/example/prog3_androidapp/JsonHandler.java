@@ -2,6 +2,9 @@ package com.example.prog3_androidapp;
 
 import static android.content.ContentValues.TAG;
 
+import static androidx.core.content.PackageManagerCompat.LOG_TAG;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -14,11 +17,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.lang.ref.WeakReference;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -34,6 +39,7 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
         this.mainActivity = mainActivity;
     }
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected LinkedList<Meal> doInBackground(String... strings) {
         String jsonString;
@@ -53,6 +59,17 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
                 return null;
             }
 
+            // Copy and insert data in local json file
+            File directory = new File(context.get().getFilesDir(), "Meals.json");
+            try {
+                FileWriter fw = new FileWriter(directory);
+                fw.write(jsonString);
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e(LOG_TAG, "Could not write file");
+            }
+
             // Get meals from Json
             try {
                 JSONObject reader = new JSONObject(jsonString);
@@ -66,9 +83,9 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
                     String name = object.getString("name");
                     String description = object.getString("description");
                     String imageURL = object.getString("imageURL");
+                    String chefURL = object.getString("chefURL");
                     // find format
-                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                    Date date = df.parse(object.getString("dateTime"));
+                    String date = object.getString("dateTime");
 
                     double price = object.getDouble("price");
 
@@ -93,22 +110,17 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
 
                     }
 
-                    Meal newMeal = new Meal(name, description, imageURL, date, price, ingrediënts, vegetarian, vegan, takeAway, active, maxParticipants);
+                    Meal newMeal = new Meal(name, description, imageURL, chefURL, date, price, ingrediënts, vegetarian, vegan, takeAway, active, maxParticipants);
                     mList.add(newMeal);
                 }
 
-            } catch (JSONException | ParseException e) {
+            } catch (JSONException e) {
                 e.printStackTrace();
                 Log.e(TAG, "Failed to parse JSON");
             }
         }
         mainActivity.SetLinkedList(mList);
         return mList;
-    }
-
-    protected void onProgressUpdate(Integer progress){
-        // Progress updates
-
     }
 
     protected void onPostExecute(LinkedList<Meal> mList){

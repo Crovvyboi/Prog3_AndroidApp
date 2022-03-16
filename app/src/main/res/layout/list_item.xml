@@ -15,14 +15,14 @@
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <TextView
-        android:id="@+id/word"
+        android:id="@+id/title"
         style="@style/textstyle"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/datePrice"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="TextView" />

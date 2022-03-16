@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
     <EditText
-        android:id="@+id/DescriptionText"
+        android:id="@+id/descriptionText"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginStart="32dp"
@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DescriptionText" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionText" />
 
     <CheckBox
         android:id="@+id/vegebox"
@@ -143,7 +143,8 @@
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="AddNewMeal"/>
 
     <TextView
         android:id="@+id/titleText"
@@ -155,5 +156,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView4"
         app:layout_constraintVertical_bias="0.478" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Price"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchAvailable"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <EditText
+        android:id="@+id/priceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:text="0.00"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/switchAvailable"
+        app:layout_constraintVertical_bias="0.148" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

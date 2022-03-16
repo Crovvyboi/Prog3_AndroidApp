@@ -4,6 +4,27 @@
       "name": "Meal 1",
       "description": "This meal is a meal",
       "imageURL": "",
+      "chefURL": "",
+      "dateTime": "2015-06-11",
+      "price": 0.00,
+      "ingrediënts": [
+        {
+          "name": "",
+          "imageURL": "",
+          "allergenic": false
+        }
+      ],
+      "vegetarian": true,
+      "vegan": false,
+      "takeAway": false,
+      "active": true,
+      "maxParticipants": 1
+    },
+    {
+      "name": "Meal 2",
+      "description": "This meal is a meal",
+      "imageURL": "",
+      "chefURL": "",
       "dateTime": "2015-06-11",
       "price": 0.00,
       "ingrediënts": [
