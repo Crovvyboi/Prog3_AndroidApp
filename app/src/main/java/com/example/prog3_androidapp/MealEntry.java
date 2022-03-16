@@ -59,7 +59,7 @@ public class MealEntry extends AppCompatActivity {
                     "https://thumbs.dreamstime.com/z/portrait-busy-chef-smiling-holding-cooking-utensil-fresh-ingredient-30014151.jpg",
                     LocalDate.now().toString(),
                     Double.valueOf(pricetext.getText().toString()),
-                    new ArrayList<Ingrediënt>(),
+                    new ArrayList<String>(),
                     vegeBox.isChecked(),
                     veganBox.isChecked(),
                     takeSwitch.isChecked(),

@@ -116,9 +116,13 @@ public class JsonHandler extends AsyncTask<String, Integer, LinkedList<Meal>> {
 
                     int maxParticipants = object.getInt("maxAmountOfParticipants");
 
-                    ArrayList<Ingrediënt> ingrediënts = new ArrayList<>();
+                    JSONArray jsonArray = object.getJSONArray("allergenes");
+                    ArrayList<String> allergens = new ArrayList<>();
+                    for (int k = 0;k<jsonArray.length();k++){
+                        allergens.add(jsonArray.getString(k));
+                    }
 
-                    Meal newMeal = new Meal(name, description, imageURL, chefURL, date, price, ingrediënts, vegetarian, vegan, takeAway, active, maxParticipants);
+                    Meal newMeal = new Meal(name, description, imageURL, chefURL, date, price, allergens, vegetarian, vegan, takeAway, active, maxParticipants);
                     mList.add(newMeal);
                 }
 
